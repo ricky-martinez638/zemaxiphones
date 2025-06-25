@@ -48,23 +48,15 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
 // === SLIDER DE CLIENTES ===
 let currentCliente = 0;
 const clienteTrack = document.querySelector('.slider-clientes-track');
-const clienteSlides = clienteTrack.querySelectorAll('img');
+const clienteSlides = document.querySelectorAll('.slider-clientes-track img');
 const clienteDots = document.querySelectorAll('.dot-cliente');
 const prevBtn = document.querySelector('.cliente-btn.prev');
 const nextBtn = document.querySelector('.cliente-btn.next');
 
-// Ancho dinámico y tamaño de cada slide
-clienteTrack.style.width = `${clienteSlides.length * 100}%`;
-clienteSlides.forEach(slide => {
-  slide.style.flex = '0 0 100%';
-});
-
 function updateClienteSlider() {
   clienteTrack.style.transform = `translateX(-${currentCliente * 100}%)`;
   clienteDots.forEach(dot => dot.classList.remove('active'));
-  if (clienteDots[currentCliente]) {
-    clienteDots[currentCliente].classList.add('active');
-  }
+  clienteDots[currentCliente].classList.add('active');
 }
 
 prevBtn?.addEventListener('click', () => {
