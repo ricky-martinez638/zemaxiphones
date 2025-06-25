@@ -638,6 +638,7 @@ p, nav a, .btn, .btn-wsp, .hero p, .hero h1 {
 .slider-clientes-track {
   display: flex;
   transition: transform 0.4s ease-in-out;
+  width: calc(100% * X); /* donde X es la cantidad total de fotos */
 }
 
 .slider-clientes-track img {
