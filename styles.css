@@ -711,8 +711,15 @@ p, nav a, .btn, .btn-wsp, .hero p, .hero h1 {
 }
 
 .card p {
+  text-align: center;
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+.card p strong {
+  color: #00eaff;
+  font-weight: 500;
+  display: inline;
 }
 
 @media (max-width: 480px) {
@@ -726,3 +733,21 @@ p, nav a, .btn, .btn-wsp, .hero p, .hero h1 {
     font-size: 1rem;
   }
 }
+
+.card h3 {
+  background-color: #003a70; /* azul marino fachero */
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.card p.precio {
+  background-color: #003a70; /* azul marino fachero */
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
