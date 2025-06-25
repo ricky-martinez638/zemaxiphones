@@ -203,7 +203,11 @@ nav ul li a:hover {
   color: #00ffcc;
   font-weight: bold;
   margin-bottom: 12px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 .btn-wsp {
   background-color: #25D366;
