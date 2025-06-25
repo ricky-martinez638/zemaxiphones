@@ -199,6 +199,7 @@ nav ul li a:hover {
 }
 
 .stock {
+  text-align: center;
   color: #00ffcc;
   font-weight: bold;
   margin-bottom: 12px;
