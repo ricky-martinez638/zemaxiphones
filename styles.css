@@ -757,3 +757,15 @@ p, nav a, .btn, .btn-wsp, .hero p, .hero h1 {
   white-space: nowrap; /* 🔒 Evita que se rompa la línea */
 }
 
+@media (max-width: 480px) {
+  .card p.precio {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    padding: 10px 10px;
+    box-sizing: border-box;
+  }
+}
+
+
