@@ -748,14 +748,28 @@ p, nav a, .btn, .btn-wsp, .hero p, .hero h1 {
 }
 
 .card p.precio {
-  background-color: #003a70; /* azul marino fachero */
+  background-color: #003a70;
   padding: 6px 12px;
   border-radius: 8px;
+  color: #ffffff;
   display: inline-block;
   margin: 0 auto 12px;
-  color: #ffffff;
-  white-space: nowrap; /* 🔒 Evita que se rompa la línea */
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  text-align: center;
 }
+
+@media (max-width: 480px) {
+  .card p.precio {
+    white-space: normal;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 
 @media (max-width: 480px) {
   .card p.precio {
@@ -766,6 +780,20 @@ p, nav a, .btn, .btn-wsp, .hero p, .hero h1 {
     padding: 10px 10px;
     box-sizing: border-box;
   }
+}
+
+/* ——— NO cortar los precios ——— */
+.card p.precio {
+  white-space: nowrap;       /* mantiene todo en una sola línea */
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+/* ——— Asegurar que las imágenes no se corten ——— */
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;       /* ¡importante! */
 }
 
 
