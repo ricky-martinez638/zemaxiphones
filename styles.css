@@ -805,5 +805,226 @@ p, nav a, .btn, .btn-wsp, .hero p, .hero h1 {
   }
 }
 
+/* 🔰 Estilos para ícono del carrito */
+#carrito-icono {
+  position: relative;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+#carrito-contador {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+}
+
+/* 🔰 Panel lateral del carrito */
+#carrito-panel {
+  position: fixed;
+  top: 70px;                   /* ✅ Que no tape el encabezado */
+  right: -320px;
+  width: 320px;
+  height: auto;
+  max-height: 85vh;            /* ✅ No ocupa toda la pantalla */
+  background: #0b1e3c;         /* Azul marino */
+  box-shadow: -2px 0 12px rgba(0,0,0,0.35);
+  padding: 20px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  border-radius: 0 0 0 15px;
+}
+
+
+#carrito-panel.active {
+  right: 0;
+}
+
+#carrito-panel h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #002b5c;
+}
+
+#carrito-lista {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#carrito-lista li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  color: #f0f0f0;
+  font-size: 0.95rem;
+}
+
+/* 🔰 Botón de Hacer Pedido */
+#hacer-pedido {
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: -0.3px;
+}
+
+#hacer-pedido:hover {
+  background-color: #0099cc;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+}
+
+
+#carrito-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;  
+  width: 320px;
+  height: 100vh;
+  background: #0b1e3c; 
+  box-shadow: -2px 0 12px rgba(0,0,0,.35);
+  padding: 20px 22px 26px;
+  display: flex; 
+  flex-direction: column;
+  transition: right .3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+#carrito-panel.active { right: 0; }
+
+/* Encabezado con botón de cierre */
+#carrito-panel h3 {
+  margin: 0 0 18px 0;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cerrar-panel {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Lista y botón eliminar */
+#carrito-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+#carrito-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: .95rem;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  padding-bottom: 6px;
+}
+
+/* Botón WhatsApp */
+#hacer-pedido {
+  background: #00bfff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .25s;
+}
+
+#hacer-pedido:hover { background: #0099cc; }
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+/* Asegura que el logo se quede a la izquierda */
+.logo {
+  margin-right: auto;
+}
+
+/* Alinea menú + carrito a la derecha */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto; /* 👈 ESTO lo empuja a la derecha */
+}
+
+.btn-eliminar {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  color: #c0392b;
+}
+
+#carrito-panel h3 {
+  color: #ffffff;         /* Blanco visible */
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+#mensaje-agregado {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+#mensaje-agregado.mostrar {
+  opacity: 1;
+}
+
+
+
+
+
+
+
 
 

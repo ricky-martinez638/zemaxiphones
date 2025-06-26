@@ -91,3 +91,87 @@ clienteTrack?.addEventListener('touchend', e => {
     prevBtn?.click();
   }
 });
+
+// 🛒 Funcionalidad del carrito
+
+const carrito = [];
+
+const botonesAgregar = document.querySelectorAll(".agregar-carrito");
+const contador = document.getElementById("carrito-contador");
+const listaCarrito = document.getElementById("carrito-lista");
+const panel = document.getElementById("carrito-panel");
+const botonPedido = document.getElementById("hacer-pedido");
+
+// Mostrar/Ocultar panel
+const iconoCarrito = document.getElementById("carrito-icono");
+if (iconoCarrito) {
+  iconoCarrito.addEventListener("click", () => {
+    panel.classList.toggle("active");
+    renderizarCarrito();
+  });
+}
+
+// Agregar productos
+botonesAgregar.forEach((boton) => {
+  boton.addEventListener("click", () => {
+    const nombre = boton.dataset.nombre;
+    mostrarMensajeAgregado();
+    carrito.push(nombre);
+    actualizarContador();
+    renderizarCarrito();
+  });
+});
+
+// Actualizar número del carrito
+function actualizarContador() {
+  contador.textContent = carrito.length;
+}
+
+// Mostrar productos en el panel
+function renderizarCarrito() {
+  listaCarrito.innerHTML = "";
+
+  carrito.forEach((producto, index) => {
+    const li = document.createElement("li");
+    li.textContent = producto;
+
+    const btnEliminar = document.createElement("button");
+    btnEliminar.textContent = "❌";
+    btnEliminar.classList.add("btn-eliminar");
+    btnEliminar.onclick = () => {
+      carrito.splice(index, 1);
+      actualizarContador();
+      renderizarCarrito();
+    };
+
+    li.appendChild(btnEliminar);
+    listaCarrito.appendChild(li);
+  });
+
+  botonPedido.disabled = carrito.length === 0;
+}
+
+// Enviar pedido por WhatsApp
+botonPedido.addEventListener("click", () => {
+  if (carrito.length === 0) return;
+
+  const mensaje = `¡Hola Zemax! Me gustaría realizar el siguiente pedido:\n\n` +
+    carrito.map((producto) => `- ${producto}`).join("\n") +
+    "\n\nQuedo atento a su respuesta. ¡Gracias!";
+
+  const url = `https://wa.me/5491122708465?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, "_blank");
+});
+
+document.getElementById("cerrar-panel").addEventListener("click", () => {
+  document.getElementById("carrito-panel").classList.remove("active");
+});
+
+function mostrarMensajeAgregado() {
+  const mensaje = document.getElementById("mensaje-agregado");
+  mensaje.classList.add("mostrar");
+  setTimeout(() => {
+    mensaje.classList.remove("mostrar");
+  }, 2500);
+}
+
