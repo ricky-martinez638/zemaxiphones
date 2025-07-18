@@ -1020,6 +1020,63 @@ header {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  /* Mover menú hamburguesa a la izquierda */
+  .menu-toggle {
+    display: flex;
+    order: -1; /* para que esté antes que el logo */
+    margin-left: 0;
+    margin-right: 15px; /* espacio a la derecha */
+  }
+
+  header {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .logo {
+    margin: 0 auto 0 0; /* que el logo quede a la derecha del menú */
+  }
+
+  nav ul {
+    /* menú desplegable */
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    background: linear-gradient(120deg, #002a54, #003a70);
+    padding: 15px 20px;
+    border-radius: 0 0 12px 12px;
+    position: absolute;
+    top: 60px; /* justo debajo del header */
+    left: 0;
+    right: 0;
+    z-index: 1001;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li a {
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 0;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav ul li a:hover {
+    color: #00bfff;
+  }
+
+  .header-buttons {
+    margin-left: auto;
+  }
+}
+
+
 
 
 
