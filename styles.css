@@ -1022,41 +1022,54 @@ header {
 
 @media (max-width: 768px) {
   /* Mover menú hamburguesa a la izquierda */
-  .menu-toggle {
-    display: flex;
-    order: -1; /* para que esté antes que el logo */
-    margin-left: 0;
-    margin-right: 15px; /* espacio a la derecha */
-  }
+  .logo {
+  position: relative;
+  top: 10px;      /* Baja un poco el logo */
+  margin: 0 auto 0 0;  /* Alinea a la izquierda */
+  color: #00bfff; /* Deja el color igual */
+  font-size: 1.8rem;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  display: flex;
+  order: -1;          /* Para que quede antes que el logo */
+  margin-left: 0;
+  margin-right: 15px; /* Espacio a la derecha */
+  position: relative;
+  top: 10px;          /* Para alinear verticalmente */
+  cursor: pointer;
+  z-index: 1001;
+}
 
   header {
     flex-wrap: nowrap;
     align-items: center;
   }
 
-  .logo {
-    margin: 0 auto 0 0; /* que el logo quede a la derecha del menú */
-  }
-
   nav ul {
-    /* menú desplegable */
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    background: linear-gradient(120deg, #002a54, #003a70);
-    padding: 15px 20px;
-    border-radius: 0 0 12px 12px;
-    position: absolute;
-    top: 60px; /* justo debajo del header */
-    left: 0;
-    right: 0;
-    z-index: 1001;
-  }
+  /* menú desplegable */
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  background: linear-gradient(120deg, #002a54, #003a70);
+  padding: 15px 20px;
+  border-radius: 0 0 12px 12px;
+  position: absolute;
+  top: 60px; /* justo debajo del header */
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
 
-  nav ul.active {
-    display: flex;
-  }
+nav ul.active {
+  display: flex;
+  transform: translateX(0);
+}
 
   nav ul li a {
     color: #fff;

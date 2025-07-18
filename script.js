@@ -175,3 +175,21 @@ function mostrarMensajeAgregado() {
   }, 2500);
 }
 
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('nav ul').classList.remove('active');
+  });
+});
+
+// Cerrar menú si clickeas fuera del menú (solo en móvil)
+document.addEventListener('click', (e) => {
+  const menu = document.querySelector('nav ul');
+  const toggle = document.querySelector('.menu-toggle');
+
+  if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+    menu.classList.remove('active');
+  }
+});
+
+
