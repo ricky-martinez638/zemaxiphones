@@ -99,30 +99,34 @@ nav ul li a:hover {
 /* ====== SLIDER FUNCIONAL ====== */
 .slider-manual {
   width: 100%;
-  max-width: 100%;
   height: auto;
-  margin: 20px auto;
+  margin: 40px auto;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 
 .slider-images {
   position: relative;
   display: flex;
-  width: 100%;
-  height: auto;
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  width: 100%;
 }
 
 .slider-images img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-  background-color: transparent;
+  width: 95vw;           /* 🔹 ocupa casi todo el ancho de la pantalla */
+  max-width: none;       /* 🔹 elimina el límite del contenedor */
+  height: auto;
+  max-height: 550px;     /* 🔹 mantiene buena proporción */
+  object-fit: contain;   /* 🔹 no deforma la imagen */
   display: none;
+  margin: 0 auto;
+  border-radius: 12px;   /* opcional, bordes suaves */
 }
 
 .slider-images img.active {
@@ -149,6 +153,14 @@ nav ul li a:hover {
 
 .dot.active {
   background-color: #00bfff;
+}
+
+/* ✅ Ajuste opcional para celulares */
+@media (max-width: 768px) {
+  .slider-images img {
+    width: 100%;
+    max-height: 400px;
+  }
 }
 
 
